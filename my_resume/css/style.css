@@ -1,6 +1,6 @@
 body {
 	background-color: #ECE8DD;
-	padding: 10px;
+	padding: 0px 10px;
 }
 
 hr {
@@ -13,4 +13,8 @@ hr {
 
 h1, h2, h3 {
 	color: #66bfbf;
+}
+
+img {
+	height: 200px
 }
