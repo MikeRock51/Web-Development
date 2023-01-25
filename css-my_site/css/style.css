@@ -1,25 +1,69 @@
 body {
-    margin: 0;
+    font-family: 'Merriweather Sans', sans-serif;    margin: 0;
 }
 
 .intro {
     background-color: #E8F3D6;
     text-align: center;
-    /* margin: 0; */
+    position: relative;
+    padding-top: 100px;
+    margin-bottom: 40px;
 }
 
 h1 {
+    font-family: 'Pacifico', cursive;
     margin: 0;
 }
 
-.top-container {
-    background-color: red;
+h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 10px;
+}
+
+.cloud2 {
+    position: absolute;
+}
+
+.cloud1 {
+    position: absolute;
+    right: 250px;
+    top: 40px;
+}
+
+.middle-container {
+    text-align: center;
+}
+
+.profile {
+    margin-bottom: 40px;
+}
+
+.mike {
     height: 200px;
-    width: 200px;
+}
+
+hr {
+    border: dashed 3px;
+    height: 0;
+    width: 15%;
+    border-color: #EAF6F6;
+    margin-bottom: 30px;
+}
+
+.skill-row {
+    position: relative;
+}
+
+.skills img {
+    background-color: #EAF6F6;
+    height: 200px;
+    /* padding: 10px;
+    border-radius: 50px;
+    margin: 0;
+    position: absolute;
+    left: 30px; */
 }
 
 .bottom-container {
-    background-color: blue;
-    height: 200px;
-    width: 200px;
+    text-align: center;
 }
