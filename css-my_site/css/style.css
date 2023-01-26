@@ -39,11 +39,12 @@ h2, h3 {
 
 .cloud2 {
     position: absolute;
+    left: 200px;
 }
 
 .cloud1 {
     position: absolute;
-    right: 300px;
+    right: 250px;
     top: 40px;
 }
 
