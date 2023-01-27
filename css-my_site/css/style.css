@@ -3,6 +3,9 @@ body {
     margin: 0;
     text-align: center;
     letter-spacing: 1.5px;
+}
+
+h1, h2, h3, p {
     line-height: 2;
 }
 
@@ -10,7 +13,11 @@ body {
     background-color: #E8F3D6;
     position: relative;
     padding-top: 150px;
-    margin-bottom: 40px;
+    margin-bottom: 100px;
+}
+
+.intro h2 {
+    font-size: xx-large;
 }
 
 .intro_p {
@@ -48,9 +55,9 @@ h2, h3 {
     top: 40px;
 }
 
-/* .mountain {
-    position: relative;
-} */
+.mountain {
+    line-height: initial !important;
+}
 
 .profile {
     margin-bottom: 40px;
@@ -61,12 +68,11 @@ h2, h3 {
 }
 
 hr {
-    border: dotted 10px;
+    border: dotted 10px rgb(230, 238, 238);
     border-bottom: none;
     height: 0;
     width: 5%;
-    border-color: rgb(230, 238, 238);
-    margin: 30px auto;
+    margin: 100px auto;
     clear: both;
 }
 
@@ -106,7 +112,7 @@ h3, a {
 }
 
 .contact-me {
-    margin: 80px auto;
+    margin: 50px auto;
 }
 
 .contact-me h2 {
@@ -120,19 +126,29 @@ h3, a {
 }
 
 .btn {
-    background-color: #11999E;
+    background: #b2dbdb;
+    background-image: -webkit-linear-gradient(top, #b2dbdb, #11baba);
+    background-image: -moz-linear-gradient(top, #b2dbdb, #11baba);
+    background-image: -ms-linear-gradient(top, #b2dbdb, #11baba);
+    background-image: -o-linear-gradient(top, #b2dbdb, #11baba);
+    background-image: linear-gradient(to bottom, #b2dbdb, #11baba);
+    color: #fff;
     padding: 10px 20px;
     font-size: 20px;
     color: #fff;
     display: inline-block;
     margin: 50px auto;
-    border-radius: 12px;
+    border-radius: 8px;
     text-decoration: none;
 }
 
 .btn:hover {
-    background-color: #EAF6F6;
-    color: #608d18;
+    background: #608d18;
+    background-image: -webkit-linear-gradient(top, #608d18, #b6d18a);
+    background-image: -moz-linear-gradient(top, #608d18, #b6d18a);
+    background-image: -ms-linear-gradient(top, #608d18, #b6d18a);
+    background-image: -o-linear-gradient(top, #608d18, #b6d18a);
+    background-image: linear-gradient(to bottom, #608d18, #b6d18a);
 }
 
 .bottom-container {
@@ -145,7 +161,12 @@ h3, a {
     text-decoration: none;
 }
 
+.footer-link:hover {
+    color:#b2dbdb
+}
+
 .bottom-container p {
-    color: #7e9e9e;
+    color: #7e9e9eb2;
+    font-size: 0.9rem;
     margin: 40px auto 20px auto;
 }
