@@ -1,3 +1,9 @@
 #title {
 	background-color: #FF4C68;
 }
+
+#title h1 {
+	font-family: 'Montserrat';
+	font-size: 3rem;
+	line-height: 1.5;
+}
