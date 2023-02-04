@@ -1,11 +1,19 @@
+body {
+	font-family: 'Montserrat';
+}
+
 #title {
 	background-color: #FF4C68;
 }
 
 #title h1 {
 	font-family: 'Montserrat';
+	font-weight: 900;
 	font-size: 3rem;
 	line-height: 1.5;
+	color: #fff;
+	margin-top: 100px;
+	margin-bottom: 50px;
 }
 
 .container-fluid {
@@ -14,4 +22,14 @@
 
 #testimonials {
 	background-color: #ef8172;
+}
+
+.icon {
+	width: 30px;
+}
+
+.iphone {
+	transform: rotate(30deg);
+	position: relative;
+	top: 100px;
 }
