@@ -4,6 +4,7 @@ body {
 
 #title {
 	background-color: #FF4C68;
+	color: #fff;
 }
 
 #title h1 {
@@ -11,9 +12,7 @@ body {
 	font-weight: 900;
 	font-size: 3rem;
 	line-height: 1.5;
-	color: #fff;
-	margin-top: 100px;
-	margin-bottom: 50px;
+	margin-top: 70px;
 }
 
 .container-fluid {
@@ -28,8 +27,25 @@ body {
 	width: 30px;
 }
 
+.navbar-brand {
+	font-family: 'Ubuntu';
+	font-size: 2.5rem;
+	font-weight: 400;
+}
+
+.nav-item {
+	padding: 0 20px;
+	font-size: 1.2rem;
+	font-weight: 400;
+}
+
+.download-btn {
+	margin: 5% 3% 5% 0
+}
+
 .iphone {
-	transform: rotate(30deg);
-	position: relative;
-	top: 100px;
+	width: 60%;
+	transform: rotate(25deg);
+	padding-top: 60px;
+	padding-left: 20px;
 }
