@@ -16,7 +16,7 @@ h1 {
 }
 
 .container-fluid {
-	padding: 3% 15%
+	padding: 3% 15% 7%;
 }
 
 .icon {
@@ -40,15 +40,22 @@ h1 {
 }
 
 .iphone {
-	width: 60%;
 	transform: rotate(25deg);
 	padding-top: 60px;
 	padding-left: 20px;
+	width: 22%;
+	position: absolute;
+	right: 22%;
+	/* top: 80px; */
+	/* z-index: -1; */
 }
 
 #features {
 	text-align: center;
-	margin: 10%;
+	padding: 10%;
+	background-color: #fff;
+	position: relative;
+	/* z-index: 1025; */
 }
 
 h3 {
