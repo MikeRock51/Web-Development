@@ -7,7 +7,7 @@ body {
 	color: #fff;
 }
 
-#title h1 {
+h1 {
 	font-family: 'Montserrat';
 	font-weight: 900;
 	font-size: 3.5rem;
@@ -17,10 +17,6 @@ body {
 
 .container-fluid {
 	padding: 3% 15%
-}
-
-#testimonials {
-	background-color: #ef8172;
 }
 
 .icon {
@@ -55,7 +51,7 @@ body {
 	margin: 10%;
 }
 
-#features h3 {
+h3 {
 	font-family: "Montserrat";
 	font-weight: bold;
 	font-size: 1.5rem;
@@ -77,3 +73,54 @@ body {
 .features-img:hover {
 	color: #FF4C68;
 }
+
+#testimonials {
+	background-color: #ef8172;
+	text-align: center;
+	color: #fff;
+}
+
+.carousel-item {
+	padding: 7% 15% 2%;
+}
+
+h2 {
+	font-weight: bold;
+	font-size: 3rem;
+	padding-bottom: 3%;
+}
+
+#testimonials img {
+	width: 15%;
+	border-radius: 100%;
+	margin-bottom: 5px;
+}
+
+#press {
+	background-color: #ef8172;
+	padding: 7% 15%;
+	text-align: center;
+}
+
+#press img {
+	width: 16%;
+	margin: 0 3%;
+}
+
+#pricing {
+	padding: 5% 15%;
+	text-align: center;
+}
+
+#pricing h2 {
+	padding-bottom: 0;
+}
+
+.pricing-desc {
+	padding-bottom: 3rem;
+}
+
+.price {
+	margin-bottom: 3%;
+}
+
