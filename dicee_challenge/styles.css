@@ -8,14 +8,15 @@ body {
     font-size: 5rem;
 }
 
-.player_1 {
-    display: inline-block;
+.row {
+    padding: 20%;
 }
 
-.player_2 {
+.player_1, .player_2 {
     display: inline-block;
+    width: 50%;
+    vertical-align: top;
 }
 
 .link {
-    
 }
