@@ -1,0 +1,21 @@
+body {
+    background-color: #36454F;
+    text-align: center;
+    padding: 10%;
+}
+
+.roll_dice {
+    font-size: 5rem;
+}
+
+.player_1 {
+    display: inline-block;
+}
+
+.player_2 {
+    display: inline-block;
+}
+
+.link {
+    
+}
