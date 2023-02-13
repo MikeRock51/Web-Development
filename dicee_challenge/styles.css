@@ -42,4 +42,26 @@ img {
     margin-top: 5%;
     color: #EEEEEE;
     text-align: center;
+    text-decoration: none;
+}
+
+@media (max-width: 750px) {
+    .dice {
+        width: 200px;
+    }
+}
+
+@media (max-width: 600px) {
+    .dice {
+        width: 150px;
+    }
+
+    h1.roll_dice {
+        font-size: 3rem;
+        font-family: 'Press Start 2P', cursive;
+        padding: 30px;
+        color: #B99B6B;
+        text-shadow: 5px 0 #232931;
+    }
+    
 }
