@@ -1,22 +1,45 @@
 body {
     background-color: #36454F;
     text-align: center;
-    padding: 10%;
+    /* padding: 10%; */
+    width: 70%;
+    margin: auto;
 }
 
-.roll_dice {
-    font-size: 5rem;
-}
-
-.row {
-    padding: 20%;
-}
-
-.player_1, .player_2 {
+.dice {
     display: inline-block;
-    width: 50%;
-    vertical-align: top;
+    text-align: center;
+    color: #B99B6B;
+    font-family: 'Indie Flower', cursive;
+}
+
+button {
+    margin: 40px auto 20px;
+}
+
+h1.roll_dice {
+    font-size: 4rem;
+    font-family: 'Press Start 2P', cursive;
+    padding: 50px;
+    color: #B99B6B;
+    text-shadow: 5px 0 #232931;
+}
+
+.result {
+    font-family: 'Lobster', cursive;
+    font-size: 5rem;
+    color: #C0EEF2;
+    margin: 0 auto 30px;
+}
+
+img {
+    width: 80%;
 }
 
 .link {
+    display: block;
+    font-family: 'Indie Flower', cursive;
+    margin-top: 5%;
+    color: #EEEEEE;
+    text-align: center;
 }
