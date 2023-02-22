@@ -42,6 +42,7 @@ for (i = 0; i < drumBtn.length; i++) {
         // alert("Won ti click me ooo");     
         let clickedPart = this.innerHTML;
         playDrum(clickedPart);
+        activeButton(clickedPart);
     }
     );
 }
@@ -50,4 +51,14 @@ for (i = 0; i < drumBtn.length; i++) {
 document.addEventListener('keydown', function (event) {
     keyEvent = event.key;
     playDrum(keyEvent);
+    activeButton(keyEvent);
 });
+
+function activeButton(key) {
+    activeKey = document.querySelector('.' + key);
+    activeKey.classList.add('pressed');
+
+    setTimeout(function() {
+        activeKey.classList.remove('pressed');
+    }, 100);
+}
