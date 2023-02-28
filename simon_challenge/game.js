@@ -1,3 +1,4 @@
+let userClickedPattern = []
 let gamePattern = [];
 let buttonColours = ["red", "blue", "green", "yellow"]
 
@@ -33,3 +34,9 @@ switch (randomChosenColour) {
 }
 
 $("#" + randomChosenColour).fadeOut(50).fadeIn(50)
+
+$(".btn").click(function(event) {
+    let userChosenColour = $(this).attr('id');
+    userClickedPattern.push(userChosenColour);
+    // console.log(userClickedPattern);
+})
