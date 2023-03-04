@@ -30,6 +30,10 @@ function playSound(sound) {
 function nextSequence() {
     let randomNumber = Math.floor((Math.random() * 3) + 1);
     level++;
+    let randomChosenColour = buttonColours[randomNumber];
+    playSound(randomChosenColour);
+    $("#" + randomChosenColour).fadeOut(50).fadeIn(50)
+    gamePattern.push(buttonColours[randomNumber])
     return (randomNumber)
 }
 
@@ -41,23 +45,48 @@ function animatePress(color) {
     }, 100);
 }
 
-let randomChosenColour = buttonColours[nextSequence()];
-
-gamePattern.push(randomChosenColour);
-playSound(randomChosenColour);
-$("#" + randomChosenColour).fadeOut(50).fadeIn(50)
+// let randomChosenColour = buttonColours[nextSequence()];
+// playSound(randomChosenColour);
+// $("#" + randomChosenColour).fadeOut(50).fadeIn(50)
 
 $(".btn").click(function() {
     let userChosenColour = $(this).attr('id');
     userClickedPattern.push(userChosenColour);
     playSound(userChosenColour);
     animatePress(userChosenColour);
-    // console.log(userClickedPattern);
+    // console.log("gameP = " + gamePattern);
+    // console.log("userC = " + userClickedPattern);
+    checkAnswer(userClickedPattern.length - 1);
+    // nextSequence();
 })
 
-$(document).keydown(function(event) {
-    $("#level-title").text("Level " + level);
+$(document).keydown(function() {
     if (level == 0) {
         nextSequence();
     }
+    console.log("gameP = " + gamePattern);
+    console.log("userC = " + userClickedPattern);
+    $("#level-title").text("Level " + level);
+    
 })
+
+function checkAnswer(currentLevel) {
+    if (userClickedPattern[currentLevel] == gamePattern[currentLevel]) {
+        console.log("Ori e wan be");
+    }
+    else {
+        alert("GAME OVER!!!")
+        // console.log(currentLevel);
+        // console.log("gameP = " + gamePattern[currentLevel]);
+        // console.log("userC = " + userClickedPattern[currentLevel]);
+
+        // patternIndex = 0;
+        // gamePattern = [];
+        // userClickedPattern = [];
+        // level = 0;
+    }
+    // console.log(userIndex);
+    // console.log("gameP = " + gamePattern[userIndex]);
+    // console.log("userC = " + userClickedPattern[userIndex]);
+    // nextSequence();
+}
