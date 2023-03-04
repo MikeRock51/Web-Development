@@ -30,6 +30,7 @@ function playSound(sound) {
 function nextSequence() {
     let randomNumber = Math.floor((Math.random() * 3) + 1);
     level++;
+    $("#level-title").text("Level " + level);
     let randomChosenColour = buttonColours[randomNumber];
     playSound(randomChosenColour);
     $("#" + randomChosenColour).fadeOut(50).fadeIn(50)
@@ -64,18 +65,26 @@ $(document).keydown(function() {
     if (level == 0) {
         nextSequence();
     }
-    console.log("gameP = " + gamePattern);
-    console.log("userC = " + userClickedPattern);
-    $("#level-title").text("Level " + level);
-    
+    // console.log("gameP = " + gamePattern);
+    // console.log("userC = " + userClickedPattern);
 })
 
 function checkAnswer(currentLevel) {
     if (userClickedPattern[currentLevel] == gamePattern[currentLevel]) {
         console.log("Ori e wan be");
+        console.log("gameP = " + gamePattern);
+        console.log("userC = " + userClickedPattern);
+        if (level == gamePattern.length) {
+            setTimeout(function() {
+                nextSequence();
+            }, 1000);
+            // userClickedPattern = [];
+        }
     }
     else {
         alert("GAME OVER!!!")
+        userClickedPattern = [];
+        gamePattern = [];
         // console.log(currentLevel);
         // console.log("gameP = " + gamePattern[currentLevel]);
         // console.log("userC = " + userClickedPattern[currentLevel]);
@@ -85,8 +94,4 @@ function checkAnswer(currentLevel) {
         // userClickedPattern = [];
         // level = 0;
     }
-    // console.log(userIndex);
-    // console.log("gameP = " + gamePattern[userIndex]);
-    // console.log("userC = " + userClickedPattern[userIndex]);
-    // nextSequence();
 }
