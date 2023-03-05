@@ -23,9 +23,16 @@ function playSound(sound) {
             blue.play();
             break;
         default:
-            console.log("I no dey");
+            console.log("E didn't dey");
             break;
     }
+}
+
+function restartGame() {
+    gamePattern = [];
+    userClickedPattern = [];
+    level = 0;
+    userIndex = 0;
 }
 
 function nextSequence() {
@@ -48,20 +55,15 @@ function animatePress(color) {
     }, 100);
 }
 
-// let randomChosenColour = buttonColours[nextSequence()];
-// playSound(randomChosenColour);
-// $("#" + randomChosenColour).fadeOut(50).fadeIn(50)
-
-    $(".btn").click(function() {
-        let userChosenColour = $(this).attr('id');
-        userClickedPattern.push(userChosenColour);
-        playSound(userChosenColour);
-        animatePress(userChosenColour);
-        
-        console.log("userC = " + userClickedPattern);
-        checkAnswer(userIndex);
-    })
-
+$(".btn").click(function() {
+    let userChosenColour = $(this).attr('id');
+    userClickedPattern.push(userChosenColour);
+    playSound(userChosenColour);
+    animatePress(userChosenColour);
+    
+    console.log("userC = " + userClickedPattern);
+    checkAnswer(userIndex);
+})
 
 $(document).keydown(function() {
     if (level === 0) {
@@ -88,6 +90,16 @@ function checkAnswer(currentLevel) {
     }
     else {
         console.log("Dey play!")
-        alert("GAME OVER!!!");
+        let gameOverSound = new Audio("./sounds/wrong.mp3");
+        gameOverSound.play();
+        $("body").addClass("game-over");
+
+        setTimeout(function() {
+            $("body").removeClass("game-over");
+        }, 200);
+
+        $("#level-title").text("Just Dey Play! Press Any Key to Restart")
+        // alert("GAME OVER!!!");
+        restartGame();
     }
 }
