@@ -2,6 +2,8 @@ let userClickedPattern = [];
 let gamePattern = [];
 let buttonColours = ["red", "blue", "green", "yellow"];
 let level = 0;
+let gameOver = false;
+let userIndex = 0;
 
 function playSound(sound) {
     switch (sound) {
@@ -35,6 +37,7 @@ function nextSequence() {
     playSound(randomChosenColour);
     $("#" + randomChosenColour).fadeOut(50).fadeIn(50)
     gamePattern.push(buttonColours[randomNumber])
+    console.log("GAmE " + gamePattern)
     return (randomNumber)
 }
 
@@ -50,22 +53,19 @@ function animatePress(color) {
 // playSound(randomChosenColour);
 // $("#" + randomChosenColour).fadeOut(50).fadeIn(50)
 
-let userIndex = 0;
+    $(".btn").click(function() {
+        let userChosenColour = $(this).attr('id');
+        userClickedPattern.push(userChosenColour);
+        playSound(userChosenColour);
+        animatePress(userChosenColour);
+        
+        console.log("userC = " + userClickedPattern);
+        checkAnswer(userIndex);
+    })
 
-// while (userIndex < gamePattern.length)
-$(".btn").click(function() {
-    let userChosenColour = $(this).attr('id');
-    userClickedPattern.push(userChosenColour);
-    playSound(userChosenColour);
-    animatePress(userChosenColour);
-    // console.log("gameP = " + gamePattern);
-    // console.log("userC = " + userClickedPattern);
-    checkAnswer(userClickedPattern.length - 1);
-    // nextSequence();
-})
 
 $(document).keydown(function() {
-    if (level == 0) {
+    if (level === 0) {
         nextSequence();
     }
     // console.log("gameP = " + gamePattern);
@@ -73,28 +73,22 @@ $(document).keydown(function() {
 })
 
 function checkAnswer(currentLevel) {
-    if (userClickedPattern[currentLevel] == gamePattern[currentLevel]) {
+    // // console.log(userClickedPattern[currentLevel] === gamePattern[currentLevel])
+    // console.log("U " + userClickedPattern[currentLevel])
+    // console.log("G " + gamePattern[currentLevel])
+    if (userClickedPattern[currentLevel] === gamePattern[currentLevel]) {
         console.log("Ori e wan be");
-        console.log("gameP = " + gamePattern);
-        console.log("userC = " + userClickedPattern);
-        if (level == gamePattern.length) {
+        userIndex++;
+        if (userClickedPattern.length === gamePattern.length) {
             setTimeout(function() {
-                nextSequence();
-            }, 1000);
-            // userClickedPattern = [];
+                    nextSequence();
+                }, 1000);
+            userClickedPattern = [];
+            userIndex = 0;
+            level = 0;
         }
     }
     else {
-        alert("GAME OVER!!!")
-        userClickedPattern = [];
-        gamePattern = [];
-        // console.log(currentLevel);
-        // console.log("gameP = " + gamePattern[currentLevel]);
-        // console.log("userC = " + userClickedPattern[currentLevel]);
-
-        // patternIndex = 0;
-        // gamePattern = [];
-        // userClickedPattern = [];
-        // level = 0;
+        alert("GAME OVER!!!");
     }
 }
