@@ -28,14 +28,9 @@ function playSound(sound) {
     }
 }
 
-// function updateLevel() {
-    
-// }
-
 function nextSequence() {
     let randomNumber = Math.floor((Math.random() * 4));
     level++;
-    console.log(level);
     $("#level-title").text("Level " + level);
     let randomChosenColour = buttonColours[randomNumber];
     playSound(randomChosenColour);
@@ -85,16 +80,14 @@ function checkAnswer(currentLevel) {
         userIndex++;
         if (userClickedPattern.length === gamePattern.length) {
             setTimeout(function() {
-                    level++;
                     nextSequence();
-                    // updateLevel();
                 }, 1000);
             userClickedPattern = [];
             userIndex = 0;
-            level = 0;
         }
     }
     else {
+        console.log("Dey play!")
         alert("GAME OVER!!!");
     }
 }
