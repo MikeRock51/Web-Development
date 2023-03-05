@@ -2,7 +2,6 @@ let userClickedPattern = [];
 let gamePattern = [];
 let buttonColours = ["red", "blue", "green", "yellow"];
 let level = 0;
-let gameOver = false;
 let userIndex = 0;
 
 function playSound(sound) {
@@ -29,9 +28,14 @@ function playSound(sound) {
     }
 }
 
+// function updateLevel() {
+    
+// }
+
 function nextSequence() {
     let randomNumber = Math.floor((Math.random() * 4));
     level++;
+    console.log(level);
     $("#level-title").text("Level " + level);
     let randomChosenColour = buttonColours[randomNumber];
     playSound(randomChosenColour);
@@ -81,7 +85,9 @@ function checkAnswer(currentLevel) {
         userIndex++;
         if (userClickedPattern.length === gamePattern.length) {
             setTimeout(function() {
+                    level++;
                     nextSequence();
+                    // updateLevel();
                 }, 1000);
             userClickedPattern = [];
             userIndex = 0;
