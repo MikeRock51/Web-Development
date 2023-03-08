@@ -43,20 +43,16 @@ app.post("/", function (req, res) {
 
     switch (op) {
         case "+":
-            res.send(num1 + " " + op + " " + num2 + " = " +
-                calculator(num1, num2, add));
+            res.send(`${num1} ${op} ${num2} = ${calculator(num1, num2, add)}`);
             break;
         case "-":
-            res.send(num1 + " " + op + " " + num2 + " = " +
-                calculator(num1, num2, sub));
+            res.send(`${num1} ${op} ${num2} = ${calculator(num1, num2, sub)}`);
             break;
         case "/":
-            res.send(num1 + " " + op + " " + num2 + " = " +
-                calculator(num1, num2, div));
+            res.send(`${num1} ${op} ${num2} = ${calculator(num1, num2, div)}`);
             break;
         case "*":
-            res.send(num1 + " " + op + " " + num2 + " = " +
-                calculator(num1, num2, mul));
+            res.send(`${num1} ${op} ${num2} = ${calculator(num1, num2, sub)}`);
             break;
         default:
             res.send("Unsupported operator");
