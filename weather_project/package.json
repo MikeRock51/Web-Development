@@ -1,0 +1,15 @@
+{
+  "name": "weather_project",
+  "version": "1.0.0",
+  "description": "A project that incoporates a weather API in node js",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mike Rock",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2"
+  }
+}
