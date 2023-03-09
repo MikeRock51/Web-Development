@@ -4,8 +4,18 @@ const bodyParser = require ("body-parser");
 const https = require("https");
 const port = 3000;
 
+app.use(bodyParser.urlencoded({extended: true}));
+
 app.get('/', function(req, res) {
-    const url = "https://api.openweathermap.org/data/2.5/weather?q=Osun,ng&appid=ef71cbbd570d83e95791c02b1c79715b&units=metric";
+    res.sendFile(__dirname + "/index.html");
+});
+
+app.post("/", function(req, res) {
+    const cityName = req.body.city;
+    let units = req.body.units.toLowerCase();
+    if (!units)
+        units = "metrics"
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=ef71cbbd570d83e95791c02b1c79715b&units=${units}`;
     https.get(url, function(response) {
         console.log(response.statusCode);
         response.on("data", function(data) {
