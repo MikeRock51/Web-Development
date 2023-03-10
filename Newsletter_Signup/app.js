@@ -14,22 +14,21 @@ app.get("/", function(req, res) {
 
 app.post("/", function(req, res) {
     const userInfo = req.body;
-    const list_id = "b7604a5780"
-    const user_email = userInfo.email;
-    const user_fname = userInfo.firstName;
-    const user_lname = userInfo.lastName;
-    const apiServer = ""
-    const url = "https://$API_SERVER.api.mailchimp.com/3.0/lists/$list_id/members"
-
+    const listID = "b7604a5780"
+    const userEmail = userInfo.email;
+    const userFname = userInfo.firstName;
+    const userLname = userInfo.lastName;
+    const apiServer = "us9";
+    const url = `https://${apiServer}.api.mailchimp.com/3.0/lists/${listID}/members`
 
     const data = {
         members: [
             {
-                email_address: user_email,
+                email_address: userEmail,
                 status: "subscribed",
                 merge_fields: {
-                  FNAME: user_fname,
-                  LNAME: $user_lname
+                  FNAME: userFname,
+                  LNAME: $userLname
                 }
               }
         ]
