@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const request = require("request");
+const https = require("https");
 const port = 3000;
 
 const app = express();
@@ -19,7 +20,8 @@ app.post("/", function(req, res) {
     const userFname = userInfo.firstName;
     const userLname = userInfo.lastName;
     const apiServer = "us9";
-    const url = `https://${apiServer}.api.mailchimp.com/3.0/lists/${listID}/members`
+    const url = `https://${apiServer}.api.mailchimp.com/3.0/lists/${listID}`;
+    const apiKey = "6f591ef8bce502c00a802fcd5f24d1d1-us9";
 
     const data = {
         members: [
@@ -28,19 +30,30 @@ app.post("/", function(req, res) {
                 status: "subscribed",
                 merge_fields: {
                   FNAME: userFname,
-                  LNAME: $userLname
+                  LNAME: userLname
                 }
               }
         ]
     }
     const jsonData = JSON.stringify(data);
+    const options = {
+        method: "POST",
+        auth: `MikeRock1:${apiKey}`
+    }
 
+    const request = https.request(url, options, function(response) {
+        response.on("data", function(data) {
+            console.log(JSON.parse(data));
+        });
+    });
 
+    request.write(jsonData);
+    request.end();
 });
 
 app.listen(port, function() {
     console.log(`Server is running on port ${port}`);
-})
+});
 
 // API Key
 // 6f591ef8bce502c00a802fcd5f24d1d1-us9
