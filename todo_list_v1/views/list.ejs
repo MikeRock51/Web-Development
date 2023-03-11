@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weekday</title>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-
-<body>
+<%- include("header") -%>
     <div id="heading" class="box">
         <h1>
             <%= heading %>
@@ -36,17 +25,11 @@
 
             <%let route = "/";%>
             <%if (heading === "Work List") {%>
-                <%route = "/work"%>
+                <%route = "/work";%>
             <%}%>
                 <form class="item" action="<%= route%>" method="POST">
                     <input type="text" name="item" placeholder="Add New Item" autofocus autocomplete="off">
-                    <button type="submit" name="button" value="<%= heading %>">+</button>
+                    <button type="submit">+</button>
                 </form>
     </div>
-
-    <footer>
-        <a href="https://github.com/MikeRock51">&copy; Mike Rock 23</a>
-    </footer>
-</body>
-
-</html>
+    <%- include("footer") -%>
