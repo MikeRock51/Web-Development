@@ -21,7 +21,7 @@ app.post("/", function(req, res) {
     const userLname = userInfo.lastName;
     const apiServer = "us9";
     const url = `https://${apiServer}.api.mailchimp.com/3.0/lists/${listID}`;
-    const apiKey = "6f591ef8bce502c00a802fcd5f24d1d1-us9";
+    const apiKey = "41063f5077d09206c9b6b1e5d74fb077-us9";
 
     const data = {
         members: [
@@ -45,10 +45,21 @@ app.post("/", function(req, res) {
         response.on("data", function(data) {
             console.log(JSON.parse(data));
         });
+
+        if (response.statusCode === 200) {
+            res.sendFile(__dirname + "/success.html");
+        }
+        else {
+            res.sendFile(__dirname + "/failure.html");
+        }
     });
 
     request.write(jsonData);
     request.end();
+});
+
+app.post("/failure", function(req, res) {
+    res.redirect("/");
 });
 
 app.listen(port, function() {
