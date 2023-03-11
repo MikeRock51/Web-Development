@@ -1,27 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weekday</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
-    <h1>Today is <%= dayName %>!</h1>
+    <div id="heading" class="box">
+        <h1>
+            <%= dayName %>
+        </h1>
+    </div>
 
-    <ul>
-        <li>Buy Garri</li>
-        <li>Buy Groundnut</li>
-        <li>Buy Sugar</li>
-        <% for (let i = 0; i < newItem.length; i++) { %>
-            <li><%= newItem[i] %></li>
-        <%}%>
-            
-    </ul>
+    <div class="box">
+        <% if (newItem.length===0) {%>
+            <div class="empty">
+                <h2 style="text-align: center;">Your list is empty</h2>
+            </div>
+            <%}%>
+    </div>
 
-    <form action="/" method="POST">
-        <input type="text" name="item" placeholder="To-Do Item">
-        <button type="submit">Add Item</button>
-    </form>
+    <div class="box">
+        <% for (let i=0; i < newItem.length; i++) { %>
+            <div class="item">
+                <input type="checkbox">
+                <p>
+                    <%= newItem[i] %>
+                </p>
+            </div>
+            <%}%>
+                <form class="item" action="/" method="POST">
+                    <input type="text" name="item" placeholder="Add New Item" autocomplete="off">
+                    <button type="submit">+</button>
+                </form>
+    </div>
+
+    <footer>
+        <a href="https://github.com/MikeRock51">&copy; Mike Rock 23</a>
+    </footer>
 </body>
+
 </html>
