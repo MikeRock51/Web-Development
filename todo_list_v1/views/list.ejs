@@ -8,5 +8,20 @@
 </head>
 <body>
     <h1>Today is <%= dayName %>!</h1>
+
+    <ul>
+        <li>Buy Garri</li>
+        <li>Buy Groundnut</li>
+        <li>Buy Sugar</li>
+        <% for (let i = 0; i < newItem.length; i++) { %>
+            <li><%= newItem[i] %></li>
+        <%}%>
+            
+    </ul>
+
+    <form action="/" method="POST">
+        <input type="text" name="item" placeholder="To-Do Item">
+        <button type="submit">Add Item</button>
+    </form>
 </body>
 </html>
