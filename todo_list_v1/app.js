@@ -4,6 +4,7 @@ const app = express();
 const port = 3000;
 
 let items = [];
+let workItems = [];
 
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
@@ -18,20 +19,35 @@ app.get("/", function(req, res) {
         day: "numeric"
     };
 
-    let day = today.toLocaleString("en-US", options);
+    let headText = today.toLocaleString("en-US", options);
 
     res.render('list', {
-        dayName: day,
+        heading: headText,
         newItem: items
     });
 });
 
-
 app.post("/", function(req, res) {
+    console.log(req.body);
     item = (req.body.item);
     items.push(item);
 
     res.redirect("/");
 });
+
+app.get("/work", function(req, res) {
+    res.render("list", {
+        heading: "Work List",
+        newItem: workItems
+    });
+});
+
+app.post("/work", function(req, res) {
+    item = req.body.item;
+    workItems.push(item);
+
+    res.redirect("/work");
+});
+
 
 app.listen(port, () => console.log("Server is up and running on port " + port));

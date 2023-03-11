@@ -12,7 +12,7 @@
 <body>
     <div id="heading" class="box">
         <h1>
-            <%= dayName %>
+            <%= heading %>
         </h1>
     </div>
 
@@ -33,9 +33,14 @@
                 </p>
             </div>
             <%}%>
-                <form class="item" action="/" method="POST">
-                    <input type="text" name="item" placeholder="Add New Item" autocomplete="off">
-                    <button type="submit">+</button>
+
+            <%let route = "/";%>
+            <%if (heading === "Work List") {%>
+                <%route = "/work"%>
+            <%}%>
+                <form class="item" action="<%= route%>" method="POST">
+                    <input type="text" name="item" placeholder="Add New Item" autofocus autocomplete="off">
+                    <button type="submit" name="button" value="<%= heading %>">+</button>
                 </form>
     </div>
 
