@@ -6,6 +6,15 @@
         <%= content1 %>
     </p>
 
-    <% console.log(postsList)%>
+    <% postsList.forEach((post) => {%>
+        <!-- <%console.log(post.title);%> -->
+        <h1><%= post.title %></h1>
+        <p>
+            <%= post.body.substring(0, 100); %>... 
+            <a href="/posts/:<%= post.title%>">Read More</a>
+        </p>
+    <%});%>
+    
+    <div></div>
 
     <%- include("partials/footer") -%>
