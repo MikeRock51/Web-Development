@@ -2,9 +2,9 @@ import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import Note from "./Note";
-import note from "../notes";
+import notes from "../notes";
 
-console.log(note)
+console.log(notes)
 
 // map through note array and reder each note
 
@@ -12,7 +12,7 @@ function App() {
   return (
     <div>
       <Header />
-      {note.map(noteDetail => <Note
+      {notes.map(noteDetail => <Note
         key={noteDetail.key}
         title={noteDetail.title}
         body={noteDetail.content}
